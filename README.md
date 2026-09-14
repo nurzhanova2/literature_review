@@ -1,58 +1,55 @@
-# Литературный обзор к диссертационному исследованию
+# Dissertation Literature Review
 
-## Тема исследования
+## Research Topic
 
-**Объяснимый искусственный интеллект для раннего выявления кредитного риска и скрытого ухудшения качества индивидуального заёмщика.**
+**Explainable artificial intelligence for the early identification of credit risk and latent deterioration in an individual borrower’s credit quality.**
 
-*Explainable artificial intelligence for the early identification of credit risk and latent deterioration in an individual borrower’s credit quality.*
+## Research Goal and Rationale
 
-## Цель и смысл исследования
+**The main goal** is to develop and empirically test an explainable system that identifies latent deterioration in an individual borrower’s credit quality before formal default.
 
-**Основная цель** — разработать и эмпирически проверить объяснимую систему, которая выявляет скрытое ухудшение кредитного качества индивидуального заёмщика до формального дефолта.
+The study considers more than classification accuracy. A practical credit decision requires a calibrated risk probability, useful warning time, an acceptable number of false alerts, an explanation of the individual signal, and the ability to audit the decision.
 
-Исследование рассматривает не только точность классификации. Для практического кредитного решения важны калиброванная вероятность риска, время предупреждения, допустимое число ложных тревог, объяснение индивидуального сигнала и возможность аудита.
-
-Технически задача задаётся следующим образом:
+The technical problem is formulated as follows:
 
 ```text
 p_hat(i, t; h) = P[Y(i, t; h) = 1 | x(i, t)]
 ```
 
-где `x(i, t)` — признаки заёмщика, доступные не позднее даты `t`; `Y(i, t; h)` — формально заданное неблагоприятное событие на горизонте `h`; `p_hat(i, t; h)` — оценённая вероятность риска. Отдельно фиксируется индикатор `Z(i, t; h)` — наблюдаемое скрытое ухудшение, которое не подменяет формальный дефолт.
+Here, `x(i, t)` denotes borrower features available no later than date `t`; `Y(i, t; h)` is a formally defined adverse event over horizon `h`; and `p_hat(i, t; h)` is the estimated risk probability. The design also defines `Z(i, t; h)`, an observable indicator of latent deterioration that does not substitute for formal default.
 
-## Навигация по материалам
+## Project Navigation
 
-| Материал | Русская версия | English version | Содержание |
+| Material | Russian version | English version | Contents |
 |---|---|---|---|
-| Полный литературный обзор | [literature_review_ru.md](docs/docs_ru/literature_review_ru.md) | [literature_review_en.md](docs/literature_review_en.md) | Критический обзор, сравнительная таблица по 50 источникам и библиография. |
-| Подробная сравнительная таблица | [comparative_table_ru.md](docs/docs_ru/comparative_table_ru.md) | [comparative_table_en.md](docs/comparative_table_en.md) | Детальное сопоставление 26 ключевых работ с предлагаемым диссертационным дизайном. |
-| Цель, research gap и новизна | [goal_gap_novelty_ru.md](docs/docs_ru/goal_gap_novelty_ru.md) | [goal_gap_novelty_en.md](docs/goal_gap_novelty_en.md) | Объект и предмет, формализация, гипотезы, исследовательский разрыв, заявляемая новизна и ограничения. |
-| Библиография | [bibliography.md](docs/bibliography.md) | [bibliography.md](docs/bibliography.md) | 50 источников с кликабельными DOI. |
-| Локально восстановленные PDF | [source_pdfs/README.md](credit-risk-xai/source_pdfs/README.md) | [source_pdfs/README.md](credit-risk-xai/source_pdfs/README.md) | Реестр локальных PDF, DOI и статусов доступа. |
+| Full literature review | [literature_review_ru.md](docs/docs_ru/literature_review_ru.md) | [literature_review_en.md](docs/literature_review_en.md) | Critical review, a comparative table of 50 sources, and bibliography. |
+| Detailed comparative table | [comparative_table_ru.md](docs/docs_ru/comparative_table_ru.md) | [comparative_table_en.md](docs/comparative_table_en.md) | Detailed comparison of 26 key studies with the proposed dissertation design. |
+| Goal, research gap, and novelty | [goal_gap_novelty_ru.md](docs/docs_ru/goal_gap_novelty_ru.md) | [goal_gap_novelty_en.md](docs/goal_gap_novelty_en.md) | Object and subject, formalisation, hypotheses, research gap, claimed novelty, and limitations. |
+| Bibliography | [bibliography.md](docs/bibliography.md) | [bibliography.md](docs/bibliography.md) | 50 sources with clickable DOI links. |
+| Locally recovered PDFs | [source_pdfs/README.md](credit-risk-xai/source_pdfs/README.md) | [source_pdfs/README.md](credit-risk-xai/source_pdfs/README.md) | Register of local PDFs, DOI links, and access statuses. |
 
-## Что проверяется в диссертационном дизайне
+## What the Dissertation Design Evaluates
 
-| Свойство | Примеры критериев | Практический смысл |
+| Property | Example measures | Practical meaning |
 |---|---|---|
-| Различающая способность | ROC-AUC, PR-AUC, recall/precision | Отделение рискованных наблюдений от нерискованных. |
-| Калибровка PD | Brier score, calibration curve | Возможность интерпретировать прогноз как вероятность риска. |
-| Раннее предупреждение | Lead time, доля предупреждённых событий | Время для кредитного вмешательства до события. |
-| Ложные тревоги | False-positive rate, precision при фиксированном пороге | Соответствие сигнала операционной нагрузке. |
-| Устойчивость объяснений | Совпадение top-k факторов, повторяемость по периодам | Проверка, что объяснение не является артефактом конкретной выборки. |
+| Discriminatory power | ROC-AUC, PR-AUC, recall/precision | Separates risky from non-risky observations. |
+| PD calibration | Brier score, calibration curve | Tests whether a prediction can be interpreted as a risk probability. |
+| Early warning | Lead time; share of events warned in advance | Measures the time available for credit intervention. |
+| False alerts | False-positive rate; precision at a fixed threshold | Aligns the risk signal with operational workload. |
+| Explanation stability | Overlap of top-k factors; repeatability across periods | Tests whether an explanation is an artefact of a particular sample. |
 
-Разбиение данных предполагается выполнять по времени: обучение на ранних периодах, настройка на последующем периоде и итоговая проверка на отдельном **out-of-time** периоде. Признаки, использующие будущую информацию, исключаются как leakage.
+The data should be split chronologically: training on earlier periods, tuning on a subsequent period, and final evaluation on a separate **out-of-time** period. Features using future information are excluded as leakage.
 
-## Доказательная база
+## Evidence Base
 
-| Показатель | Количество | Интерпретация |
+| Measure | Count | Interpretation |
 |---|---:|---|
-| Источников в библиографии | 50 | Полный библиографический корпус обзора. |
-| Работ в подробной сравнительной таблице | 26 | Отобранные ключевые работы для содержательного сопоставления. |
+| Sources in the bibliography | 50 | Complete bibliographic corpus of the review. |
+| Studies in the detailed comparative table | 26 | Selected key studies for substantive comparison. |
 
-## Рекомендуемый порядок просмотра перед защитой
+## Recommended Review Order Before the Defense
 
-1. Начните с [полного литературного обзора на русском](docs/docs_ru/literature_review_ru.md) или [английском](docs/literature_review_en.md).
-2. Перейдите к документу [цель, gap и новизна](docs/docs_ru/goal_gap_novelty_ru.md), чтобы показать научную постановку и проверяемые гипотезы.
-3. Используйте [подробную сравнительную таблицу](docs/docs_ru/comparative_table_ru.md) для сопоставления решений других авторов с предлагаемым дизайном.
-4. При вопросах об источниках откройте [библиографию](docs/bibliography.md) и [реестр PDF](credit-risk-xai/source_pdfs/README.md).
-
+1. Begin with the full [Russian](docs/docs_ru/literature_review_ru.md) or [English](docs/literature_review_en.md) literature review.
+2. Read [Goal, Research Gap, and Novelty](docs/docs_ru/goal_gap_novelty_ru.md) to review the scientific framework and testable hypotheses.
+3. Use the [detailed comparative table](docs/docs_ru/comparative_table_ru.md) to compare the proposed design with solutions proposed by other authors.
+4. For questions about sources, open the [bibliography](docs/bibliography.md) and the [PDF register](credit-risk-xai/source_pdfs/README.md).
