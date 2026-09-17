@@ -30,7 +30,7 @@ literature review/
 ### English Literature Review
 
 ```text
-/Users/zarinanurzanova/Desktop/literature review/docs/docs_en/literature_review_en.md
+/literature review/docs/docs_en/literature_review_en.md
 ```
 
 Contains the English version of the dissertation literature review.
@@ -38,7 +38,7 @@ Contains the English version of the dissertation literature review.
 ### Russian Literature Review
 
 ```text
-/Users/zarinanurzanova/Desktop/literature review/docs/docs_ru/literature_review_en.md
+/literature review/docs/docs_ru/literature_review_en.md
 ```
 
 Contains the Russian version of the dissertation literature review.
@@ -46,7 +46,7 @@ Contains the Russian version of the dissertation literature review.
 ### Bibliography
 
 ```text
-/Users/zarinanurzanova/Desktop/literature review/docs/bibliography.md
+/literature review/docs/bibliography.md
 ```
 
 Contains the complete bibliography used by both versions of the literature review.
