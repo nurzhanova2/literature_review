@@ -2,54 +2,156 @@
 
 ## Research Topic
 
-**Explainable artificial intelligence for the early identification of credit risk and latent deterioration in an individual borrower’s credit quality.**
+**Explainable Artificial Intelligence for the Early Identification of Credit Risk and Latent Deterioration in Borrower Quality**
 
-## Research Goal and Rationale
+This repository contains the literature review for a dissertation focused on explainable artificial intelligence, credit-risk modelling, early warning, and the identification of latent deterioration in borrower quality before formal default.
 
-**The main goal** is to develop and empirically test an explainable system that identifies latent deterioration in an individual borrower’s credit quality before formal default.
+---
 
-The study considers more than classification accuracy. A practical credit decision requires a calibrated risk probability, useful warning time, an acceptable number of false alerts, an explanation of the individual signal, and the ability to audit the decision.
-
-The technical problem is formulated as follows:
+## Project Structure
 
 ```text
-p_hat(i, t; h) = P[Y(i, t; h) = 1 | x(i, t)]
+literature review/
+│
+├── README.md
+│
+└── docs/
+    ├── bibliography.md
+    │
+    ├── docs_en/
+    │   └── literature_review_en.md
+    │
+    └── docs_ru/
+        └── literature_review_en.md
 ```
 
-Here, `x(i, t)` denotes borrower features available no later than date `t`; `Y(i, t; h)` is a formally defined adverse event over horizon `h`; and `p_hat(i, t; h)` is the estimated risk probability. The design also defines `Z(i, t; h)`, an observable indicator of latent deterioration that does not substitute for formal default.
+## Files
 
-## Project Navigation
+### English Literature Review
 
-| Material | Russian version | English version | Contents |
-|---|---|---|---|
-| Full literature review | [literature_review_ru.md](docs/docs_ru/literature_review_ru.md) | [literature_review_en.md](docs/literature_review_en.md) | Critical review, a comparative table of 50 sources, and bibliography. |
-| Detailed comparative table | [comparative_table_ru.md](docs/docs_ru/comparative_table_ru.md) | [comparative_table_en.md](docs/comparative_table_en.md) | Detailed comparison of 26 key studies with the proposed dissertation design. |
-| Goal, research gap, and novelty | [goal_gap_novelty_ru.md](docs/docs_ru/goal_gap_novelty_ru.md) | [goal_gap_novelty_en.md](docs/goal_gap_novelty_en.md) | Object and subject, formalisation, hypotheses, research gap, claimed novelty, and limitations. |
-| Bibliography | [bibliography.md](docs/bibliography.md) | [bibliography.md](docs/bibliography.md) | 50 sources with clickable DOI links. |
-| Locally recovered PDFs | [source_pdfs/README.md](credit-risk-xai/source_pdfs/README.md) | [source_pdfs/README.md](credit-risk-xai/source_pdfs/README.md) | Register of local PDFs, DOI links, and access statuses. |
+```text
+/Users/zarinanurzanova/Desktop/literature review/docs/docs_en/literature_review_en.md
+```
 
-## What the Dissertation Design Evaluates
+Contains the English version of the dissertation literature review.
 
-| Property | Example measures | Practical meaning |
-|---|---|---|
-| Discriminatory power | ROC-AUC, PR-AUC, recall/precision | Separates risky from non-risky observations. |
-| PD calibration | Brier score, calibration curve | Tests whether a prediction can be interpreted as a risk probability. |
-| Early warning | Lead time; share of events warned in advance | Measures the time available for credit intervention. |
-| False alerts | False-positive rate; precision at a fixed threshold | Aligns the risk signal with operational workload. |
-| Explanation stability | Overlap of top-k factors; repeatability across periods | Tests whether an explanation is an artefact of a particular sample. |
+### Russian Literature Review
 
-The data should be split chronologically: training on earlier periods, tuning on a subsequent period, and final evaluation on a separate **out-of-time** period. Features using future information are excluded as leakage.
+```text
+/Users/zarinanurzanova/Desktop/literature review/docs/docs_ru/literature_review_en.md
+```
 
-## Evidence Base
+Contains the Russian version of the dissertation literature review.
 
-| Measure | Count | Interpretation |
-|---|---:|---|
-| Sources in the bibliography | 50 | Complete bibliographic corpus of the review. |
-| Studies in the detailed comparative table | 26 | Selected key studies for substantive comparison. |
+### Bibliography
 
-## Recommended Review Order Before the Defense
+```text
+/Users/zarinanurzanova/Desktop/literature review/docs/bibliography.md
+```
 
-1. Begin with the full [Russian](docs/docs_ru/literature_review_ru.md) or [English](docs/literature_review_en.md) literature review.
-2. Read [Goal, Research Gap, and Novelty](docs/docs_ru/goal_gap_novelty_ru.md) to review the scientific framework and testable hypotheses.
-3. Use the [detailed comparative table](docs/docs_ru/comparative_table_ru.md) to compare the proposed design with solutions proposed by other authors.
-4. For questions about sources, open the [bibliography](docs/bibliography.md) and the [PDF register](credit-risk-xai/source_pdfs/README.md).
+Contains the complete bibliography used by both versions of the literature review.
+
+The bibliography currently includes **56 sources**.
+
+---
+
+## Literature Review Structure
+
+The literature review is organised into the following sections:
+
+1. **Credit-Risk Problem Formulation and Unit of Analysis**
+2. **From Statistical Credit Scoring to Machine-Learning Ensembles**
+3. **Explainability in Credit-Risk Models**
+4. **Class Imbalance and Explanation Stability**
+5. **Dynamic Credit Risk and Survival Modelling**
+6. **Early Warning and Latent Deterioration Before Default**
+7. **Calibration and Decision Usefulness**
+8. **Temporal Validation, Drift, Governance, and Auditability**
+9. **Cross-Study Synthesis**
+10. **Conclusions from the Literature Review**
+
+---
+
+## Main Research Focus
+
+The review focuses on credit-risk modelling at the level of the individual borrower.
+
+It distinguishes between:
+
+* borrower default;
+* delinquency;
+* corporate financial distress;
+* bank default;
+* systemic financial risk;
+* early-warning signals;
+* latent deterioration in borrower quality.
+
+These phenomena are treated as related but non-equivalent and are not compared directly without considering differences in target definition, data, borrower population, time horizon, and validation design.
+
+---
+
+## Research Areas Covered
+
+The literature review covers:
+
+* logistic regression and traditional credit scoring;
+* Random Forest, XGBoost, LightGBM, and ensemble models;
+* explainable artificial intelligence;
+* SHAP and LIME;
+* intrinsic and post-hoc interpretability;
+* class imbalance;
+* explanation stability;
+* dynamic credit-risk modelling;
+* survival analysis;
+* time-to-event modelling;
+* early-warning systems;
+* borrower deterioration before default;
+* probability calibration;
+* ROC-AUC and PR-AUC;
+* recall and precision;
+* Brier score and calibration analysis;
+* false-alert burden;
+* warning lead time;
+* out-of-time validation;
+* target leakage;
+* temporal distribution shift;
+* model monitoring;
+* auditability and model governance.
+
+---
+
+## Central Literature Review Conclusion
+
+The reviewed literature shows that credit-risk models should not be evaluated solely on predictive discrimination.
+
+A model may achieve strong ROC-AUC while still:
+
+* producing poorly calibrated probabilities;
+* generating excessive false alerts;
+* identifying deterioration too late;
+* losing predictive quality over time;
+* producing unstable local explanations.
+
+Therefore, credit-risk monitoring requires consideration of several interconnected dimensions:
+
+**predictive performance, probability calibration, temporal robustness, warning timeliness, false-alert burden, and explanation stability.**
+
+The literature review consequently treats early identification of borrower deterioration as a temporal monitoring problem rather than only as a conventional binary default-classification task.
+
+---
+
+## Citation Convention
+
+Both literature-review versions use numerical citations:
+
+```text
+[1], [2], [3], ... [56]
+```
+
+All citation numbers correspond to entries in:
+
+```text
+docs/bibliography.md
+```
+
+The citation numbering must remain identical in the Russian and English versions.
