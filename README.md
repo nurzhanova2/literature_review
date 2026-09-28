@@ -8,6 +8,14 @@ This repository contains the literature review for a dissertation focused on exp
 
 ---
 
+## Research Question
+
+> **How effectively can explainable machine-learning models identify latent deterioration in borrower quality before formal default under an out-of-time validation design, when assessed jointly for discrimination, calibration, warning lead time, false-alert burden, and the temporal stability of explanations?**
+
+The study treats latent deterioration as a pre-specified observable transition that is independent of the candidate model being evaluated.
+
+---
+
 ## Project Structure
 
 ```text
@@ -22,36 +30,30 @@ literature review/
     │   └── literature_review_en.md
     │
     └── docs_ru/
-        └── literature_review_en.md
+        └── literature_review_ru.md
 ```
 
 ## Files
 
 ### English Literature Review
 
-```text
-/literature review/docs/docs_en/literature_review_en.md
-```
+[`docs/docs_en/literature_review_en.md`](docs/docs_en/literature_review_en.md)
 
 Contains the English version of the dissertation literature review.
 
 ### Russian Literature Review
 
-```text
-/literature review/docs/docs_ru/literature_review_en.md
-```
+[`docs/docs_ru/literature_review_ru.md`](docs/docs_ru/literature_review_ru.md)
 
 Contains the Russian version of the dissertation literature review.
 
 ### Bibliography
 
-```text
-/literature review/docs/bibliography.md
-```
+[`docs/bibliography.md`](docs/bibliography.md)
 
 Contains the complete bibliography used by both versions of the literature review.
 
-The bibliography currently includes **56 sources**.
+The bibliography currently includes **54 sources**.
 
 ---
 
@@ -59,16 +61,15 @@ The bibliography currently includes **56 sources**.
 
 The literature review is organised into the following sections:
 
-1. **Credit-Risk Problem Formulation and Unit of Analysis**
-2. **From Statistical Credit Scoring to Machine-Learning Ensembles**
+1. **Scope of the Review and Formulation of the Problem**
+2. **From Statistical Scoring to Machine-Learning Ensembles: Evidence and Its Limits**
 3. **Explainability in Credit-Risk Models**
-4. **Class Imbalance and Explanation Stability**
-5. **Dynamic Credit Risk and Survival Modelling**
+4. **Class Imbalance and the Stability of Explanations**
+5. **Temporal Risk and Survival Modelling**
 6. **Early Warning and Latent Deterioration Before Default**
 7. **Calibration and Decision Usefulness**
 8. **Temporal Validation, Drift, Governance, and Auditability**
-9. **Cross-Study Synthesis**
-10. **Conclusions from the Literature Review**
+9. **Synthesis, Research Gaps, and the Present Study**
 
 ---
 
@@ -145,7 +146,7 @@ The literature review consequently treats early identification of borrower deter
 Both literature-review versions use numerical citations:
 
 ```text
-[1], [2], [3], ... [56]
+[1], [2], [3], ... [47]
 ```
 
 All citation numbers correspond to entries in:
