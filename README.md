@@ -1,10 +1,10 @@
-# Dissertation Literature Review
+# Literature Review
 
 ## Research Topic
 
 **Explainable Artificial Intelligence for the Early Identification of Credit Risk and Latent Deterioration in Borrower Quality**
 
-This repository contains the literature review for a dissertation focused on explainable artificial intelligence, credit-risk modelling, early warning, and the identification of latent deterioration in borrower quality before formal default.
+This repository contains the literature review for a research project focused on explainable artificial intelligence, credit-risk modelling, early warning, and the identification of latent deterioration in borrower quality before formal default.
 
 ---
 
@@ -39,13 +39,13 @@ literature review/
 
 [`docs/docs_en/literature_review_en.md`](docs/docs_en/literature_review_en.md)
 
-Contains the English version of the dissertation literature review.
+Contains the English version of the literature review.
 
 ### Russian Literature Review
 
 [`docs/docs_ru/literature_review_ru.md`](docs/docs_ru/literature_review_ru.md)
 
-Contains the Russian version of the dissertation literature review.
+Contains the Russian version of the literature review.
 
 ### Bibliography
 
